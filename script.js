@@ -1,12 +1,39 @@
 // Force scroll to top on load
-window.onload = function() {
-    var splineElement = document.querySelectorAll('spline-viewer');
+// Reliably remove Spline watermarks (even if they reappear)
+function removeSplineWatermarks() {
+    const splineElements = document.querySelectorAll('spline-viewer');
     
-    for (let pas = 0; pas < splineElement.length; pas++) {
-      var shadowRoot = splineElement[pas].shadowRoot;
-      shadowRoot.querySelector('#logo').remove();
-    }
-  }
+    splineElements.forEach(element => {
+        // Check immediately
+        const checkAndRemove = () => {
+            const shadowRoot = element.shadowRoot;
+            if (!shadowRoot) return;
+            
+            const logo = shadowRoot.querySelector('#logo');
+            if (logo) {
+                logo.remove();
+                console.log('Spline watermark removed!');
+            }
+        };
+
+        // Check every 500ms in case it reappears
+        const observer = new MutationObserver(checkAndRemove);
+        observer.observe(element, { 
+            childList: true, 
+            subtree: true 
+        });
+
+        // Initial check
+        checkAndRemove();
+    });
+}
+
+// Run on load and whenever new content is added
+window.addEventListener('load', removeSplineWatermarks);
+document.addEventListener('DOMContentLoaded', removeSplineWatermarks);
+
+// Optional: Also check periodically in case Spline reinserts it
+setInterval(removeSplineWatermarks, 2000);
 if ('scrollRestoration' in history) {
     history.scrollRestoration = 'manual';
 }
