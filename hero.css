@@ -1,0 +1,447 @@
+/* Hero Section Style */
+
+.hero {
+    background-color: #0a0e14;
+    --grid-color: rgba(0, 170, 255, 0.07);
+    --grid-size: 60px;
+    --line-thickness: 1px;
+    --glow-color: rgba(100, 180, 255, 0.12);
+    --vignette-color: rgba(0, 5, 10, 0.4);
+
+    /* Multiple background layers */
+    background-image:
+    
+        /* Top Vignette */
+        radial-gradient(ellipse at top, var(--vignette-color) 0%, transparent 60%),
+        /* Bottom Glow */
+        radial-gradient(ellipse at bottom, var(--glow-color) 0%, transparent 70%),
+
+        /* Vertical grid lines */
+        repeating-linear-gradient(
+            to right,
+            var(--grid-color) 0,
+            var(--grid-color) var(--line-thickness),
+            transparent var(--line-thickness),
+            transparent var(--grid-size)
+        ),
+        /* Horizontal grid lines */
+        repeating-linear-gradient(
+            to bottom,
+            var(--grid-color) 0,
+            var(--grid-color) var(--line-thickness),
+            transparent var(--line-thickness),
+            transparent var(--grid-size)
+        );
+
+
+    background-size:
+        100% 100%,             /* Vignette */
+        100% 100%,             /* Glow */
+        var(--grid-size) var(--grid-size), /* Vertical Grid */
+        var(--grid-size) var(--grid-size); /* Horizontal Grid */
+
+
+    background-position:
+        center top,             
+        center bottom,          
+        center center,          
+        center center;        
+
+   
+    background-repeat:
+        no-repeat,             
+        no-repeat,              
+        repeat,                 
+        repeat;              
+
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 20px 40px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.hero-content-wrapper {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 3; /* Above grid and background effects */
+}
+
+.hero .hero-logo {
+    display: block;
+    height: 50px;
+    width: auto;
+    margin: 0 auto 40px auto;
+    filter: drop-shadow(0 0 12px rgba(0, 170, 255, 0.45));
+    position: relative;
+    z-index: 4;
+}
+
+.hero-main-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.hero-text {
+    flex: 1 1 55%;
+    text-align: left;
+    max-width: 600px;
+}
+
+.hero h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3.5rem;
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #00aaff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1.1;
+    text-shadow: 0 0 18px rgba(0, 170, 255, 0.35);
+}
+
+.hero p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.15rem;
+    margin: 0 0 30px 0;
+    line-height: 1.7;
+    opacity: 0.9;
+    max-width: 550px;
+}
+
+.registration-status {
+    background-color: rgba(10, 14, 20, 0.65);
+    border: 1px solid rgba(0, 170, 255, 0.25);
+    border-radius: 8px;
+    padding: 15px 25px;
+    margin-bottom: 35px;
+    display: inline-block;
+    text-align: center;
+    backdrop-filter: blur(5px);
+    max-width: 350px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.registration-status .status-title {
+    display: block;
+    font-family: 'Orbitron', sans-serif;
+    color: #00aaff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.registration-status .status-message {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    color: #ccc;
+    font-weight: 500;
+}
+
+.hero .cta-button {
+    margin-top: 0;
+    padding: 14px 35px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    background-color: #0095d0;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: inline-block;
+}
+
+.hero .cta-button:hover {
+    background-color: #00aaff;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 170, 255, 0.35);
+}
+
+.hero-image {
+    flex: 1 1 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    min-height: 400px;
+}
+
+.hero-robot-arm {
+    max-width: 100%;
+    max-height: 70vh;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0px 8px 30px rgba(0, 170, 255, 0.25)); /* Enhanced shadow */
+    transform: scale(1.05);
+    z-index: 3;
+}
+
+.countdown {
+    font-family: 'Orbitron', sans-serif;
+    margin: 30px 0 40px 0;
+    padding: 20px;
+    background: rgba(10, 14, 20, 0.5); /* Match registration status style */
+    border-radius: 10px;
+    border: 1px solid rgba(0, 170, 255, 0.2);
+    max-width: 100%;
+    width: fit-content;
+    backdrop-filter: blur(4px);
+}
+
+.countdown-title {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: #00aaff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.countdown-digits {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.countdown-item {
+    text-align: center;
+    min-width: 65px;
+}
+
+.countdown-number {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #00aaff;
+    text-shadow: 0 0 8px rgba(0, 170, 255, 0.4);
+    background: rgba(0, 0, 0, 0.25);
+    padding: 8px 12px;
+    border-radius: 5px;
+    display: inline-block;
+    line-height: 1.2;
+    min-width: 60px;
+    text-align: center;
+}
+
+.countdown-label {
+    font-size: 0.75rem;
+    margin-top: 6px;
+    color: #ddd;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 400;
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 24px;
+    height: 44px;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 15px;
+    opacity: 0.8;
+    transition: opacity 0.4s ease-out;
+    z-index: 5;
+    pointer-events: none;
+}
+
+.mouse-wheel {
+    display: block;
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3px;
+    height: 8px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 2px;
+    opacity: 1;
+    animation-name: scroll-wheel-animation;
+    animation-duration: 1.8s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+.robot-3d{
+    scale : 0.9;
+    top: 10;
+    right: -20%;
+}
+spline-viewer {
+    transform: scale(1); /* Adjust size */
+
+}
+
+
+
+/* Responsive Styles */
+
+@media (max-width: 992px) {
+    .hero-main-content {
+        gap: 30px;
+    }
+    .hero h1 {
+        font-size: 3rem;
+    }
+    .hero p {
+        font-size: 1.1rem;
+    }
+    .hero-robot-arm {
+         transform: scale(1);
+    }
+    .countdown-number {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        min-height: auto;
+        padding-top: 100px;
+        padding-bottom: 60px;
+        text-align: center;
+        --grid-size: 45px; /* Slightly smaller grid on mobile */
+        --glow-color: rgba(100, 180, 255, 0.15); /* Slightly stronger glow on mobile */
+    }
+    .hero .hero-logo {
+        height: 45px;
+        margin-bottom: 30px;
+    }
+    .hero-main-content {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 40px;
+    }
+    .hero-text {
+        flex-basis: auto;
+        text-align: center;
+        max-width: 95%;
+        margin: 0 auto;
+    }
+     .hero-image {
+        flex-basis: auto;
+        margin-bottom: 20px;
+        min-height: 250px;
+     }
+     .hero-robot-arm {
+        max-height: 40vh;
+        filter: drop-shadow(0px 5px 20px rgba(0, 170, 255, 0.2));
+     }
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    .hero p {
+        font-size: 1rem;
+        max-width: 90%;
+        margin: 0 auto 25px auto;
+    }
+    .registration-status {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 30px;
+        max-width: 90%;
+    }
+    .hero .cta-button {
+        padding: 12px 30px;
+        font-size: 1rem;
+        margin: 0 auto; 
+    }
+    .countdown {
+        margin: 30px auto 40px auto;
+        width: 95%;
+    }
+    .countdown-digits {
+        gap: 10px;
+    }
+    .countdown-item {
+        min-width: 60px;
+    }
+    .countdown-number {
+        font-size: 1.8rem;
+        padding: 6px 10px;
+        min-width: 45px;
+    }
+    .countdown-label {
+        font-size: 0.7rem;
+        margin-top: 4px;
+    }
+    .scroll-indicator {
+        bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+     .hero {
+         padding: 80px 15px 40px;
+     }
+     .hero .hero-logo {
+         height: 40px;
+     }
+    .hero h1 {
+        font-size: 2.1rem;
+    }
+    .hero p {
+        font-size: 0.95rem;
+    }
+    .registration-status .status-title {
+        font-size: 1rem;
+    }
+    .registration-status .status-message {
+        font-size: 0.9rem;
+    }
+    .countdown-digits {
+        gap: 8px;
+    }
+    .countdown-item {
+        min-width: 55px;
+    }
+    .countdown-number {
+        font-size: 1.6rem;
+        padding: 5px 8px;
+        min-width: 40px;
+    }
+    .countdown-label {
+        font-size: 0.65rem;
+    }
+}
+
+
+@keyframes scroll-wheel-animation {
+    0% {
+        opacity: 1;
+        top: 8px;
+    }
+    25% {
+        opacity: 1;
+        top: 18px;
+    }
+    50% {
+        opacity: 0;
+        top: 22px;
+    }
+    75% {
+        opacity: 0;
+        top: 8px;
+    }
+    100% {
+        opacity: 1;
+        top: 8px;
+    }
+}

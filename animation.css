@@ -1,0 +1,46 @@
+/* Global Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+/* Reusable Button Styles */
+.cta-button {
+    font-family: 'Orbitron', sans-serif;
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #0095d0;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+.cta-button:hover {
+    background-color: #007bb0;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 149, 208, 0.3);
+}
+
+/* Animation Utility Classes */
+.anim-fade-scale, .anim-fade-up, .anim-fade-up-delay, .anim-fade-up-delay-more, .anim-slide-right, .anim-slide-left {
+    opacity: 0;
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.anim-fade-scale { transform: scale(0.95); }
+.anim-fade-up, .anim-fade-up-delay, .anim-fade-up-delay-more { transform: translateY(30px); }
+.anim-slide-right { transform: translateX(50px); }
+.anim-slide-left { transform: translateX(-50px); }
+.anim-fade-up-delay, .anim-slide-left { transition-delay: 0.2s; }
+.anim-fade-up-delay-more { transition-delay: 0.4s; }
+

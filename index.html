@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robotics Competition Landing Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!--  Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Orbitron:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="navigation.css">
+    <link rel="stylesheet" href="hero.css">
+    <link rel="stylesheet" href="presentation.css">
+    <link rel="stylesheet" href="register.css">
+    <link rel="stylesheet" href="faq.css">
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="animation.css">
+
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+             <a href="#" class="logo"><img src="white.png" alt="Logo"></a>
+
+             <div class="nav-links" id="nav-menu">
+                 <a href="#presentation" class="nav-link">About</a>
+                 <a href="#contact" class="nav-link">Contact</a>
+                 <a href="#faq" class="nav-link">FAQ</a>
+                 <a href="#register" class="nav-link"><button class="nav-button">Register</button></a>
+
+             </div>
+
+          
+             <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu">
+                 <span></span>
+                 <span></span>
+                 <span></span>
+             </button>
+          
+
+        </div>
+    </nav>
+
+   <!-- Hero Section -->
+   <section class="hero" id="hero">
+    <div class="hero-content-wrapper"> 
+        <img src="iscraft-logo.png" alt="ISC Logo" class="hero-logo"> 
+
+        <div class="hero-main-content">
+            <div class="hero-text">
+                <h1>ISCraft 2025</h1>
+                <p>Engineer the Future: Build, Program, and Compete in the New Robotic Challenge!</p>
+
+
+
+                              <div class="countdown">
+                     <div class="countdown-title">Registration Closes In</div>
+                     <div class="countdown-digits">
+                         <div class="countdown-item"><div class="countdown-number" id="days">00</div><div class="countdown-label">Days</div></div>
+                         <div class="countdown-item"><div class="countdown-number" id="hours">00</div><div class="countdown-label">Hours</div></div>
+                         <div class="countdown-item"><div class="countdown-number" id="minutes">00</div><div class="countdown-label">Minutes</div></div>
+                         <div class="countdown-item"><div class="countdown-number" id="seconds">00</div><div class="countdown-label">Seconds</div></div>
+                     </div>
+                </div>
+
+
+                <a href="#register" class="cta-button">Register Now</a> <!-- Keep the button -->
+
+            </div>
+           
+            <spline-viewer class="robot-3d" url="https://prod.spline.design/YY1OhVkiRE7E5eKy/scene.splinecode"></spline-viewer>
+           
+
+         
+        </div>
+    </div>
+    
+
+
+    <div class="hero-bg-shape shape-1"></div>
+    <div class="hero-bg-shape shape-2"></div>
+
+    <div class="scroll-indicator" id="scrollIndicator"><span class="mouse-wheel"></span></div>
+</section>
+
+    <!-- Why Join Us Section -->
+    <section class="features" id="features">
+        <h2 class="section-title">Why Participate?</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <i class="fas fa-cogs card-icon"></i> 
+                <h3>Sharpen Your Skills</h3>
+                <p>Apply theory to practice. Design, build, and program a functional robotic arm, tackling real-world engineering challenges and honing your technical abilities.</p>
+             </div>
+             <div class="feature-card">
+                <i class="fas fa-users card-icon"></i>
+                <h3>Connect & Collaborate</h3>
+                <p>Work alongside talented peers. Share ideas, learn from others, and build valuable connections within the robotics community in a stimulating team environment.</p>
+             </div>
+             <div class="feature-card">
+                <i class="fas fa-robot card-icon"></i> 
+                <h3>Tackle the Challenge</h3>
+                <p>Put your ingenuity to the test! Compete against other teams, overcome complex robotic arm tasks, and showcase your innovative solutions in a dynamic setting.</p>
+             </div>
+        </div>
+    </section>
+
+   <!-- Register Now Section -->
+   <section class="register-section" id="register">
+    <div class="register-container">
+        <div class="register-content">
+            <h2 class="section-title anim-fade-scale">Ready to Compete?</h2>
+            <p class="anim-fade-up">Don't miss your chance to be part of the Challenge. Check the rules, gather your team, and sign up today!</p>
+            <div class="register-buttons anim-fade-up-delay">
+                <a href="#rules-modal" class="cta-button-outline">View Rules</a> 
+                <a href="#registration-form" class="cta-button">Register Now</a> 
+            </div>
+        </div>
+        <div class="register-visual anim-slide-right">
+            <!-- Placeholder for an image or 3D model -->
+            <!-- Option 1: Image -->
+            <img src="https://via.placeholder.com/500x400?text=Robotics+Arm+Concept" alt="Robotics Arm Concept">
+            <!-- Option 2: If using Google's <model-viewer> for 3D (requires JS library) -->
+            <!-- <model-viewer src="path/to/your/robot.glb" alt="A 3D model of a robot" auto-rotate camera-controls></model-viewer> -->
+             <div class="visual-overlay"></div> 
+        </div>
+    </div>
+    
+</section>
+
+
+
+<!-- FAQ Section -->
+<section class="faq-section" id="faq">
+    <div class="faq-container">
+        <h2 class="section-title anim-fade-scale">Frequently Asked Questions</h2>
+        <div class="faq-list">
+
+           
+            <div class="faq-item anim-fade-up">
+                <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-1">
+                    <span>Are these the only and final Questions?</span>
+                    <i class="fas fa-chevron-down faq-icon"></i>
+                </button>
+                <div class="faq-answer" id="faq-answer-1" role="region" aria-hidden="true">
+                    <p>No, I just copied them from Polymaze's to show how it will look like, I will modify them later.</p>
+                </div>
+            </div>
+
+            
+            <div class="faq-item anim-fade-up-delay">
+                 <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-2">
+                    <span>What is the maximum number of participants allowed in a team?</span>
+                    <i class="fas fa-chevron-down faq-icon"></i>
+                </button>
+                <div class="faq-answer" id="faq-answer-2" role="region" aria-hidden="true">
+                    <p>A team can have a maximum of 4 people.This size helps the team communicate and collaborate better in order to build and design a proper robot.</p>
+                </div>
+            </div>
+
+       
+            <div class="faq-item anim-fade-up-delay-more">
+                 <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-3">
+                    <span>Do all team members need to fill the form?</span>
+                    <i class="fas fa-chevron-down faq-icon"></i>
+                </button>
+                <div class="faq-answer" id="faq-answer-3" role="region" aria-hidden="true">
+                    <p>No, you just need to assign one member of your team to fill it out.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Contact Us Section -->
+<section class="contact-section" id="contact">
+    <div class="contact-container">
+        <h2 class="section-title anim-fade-scale">Get In Touch</h2>
+        <div class="contact-grid">
+
+            <div class="contact-info anim-fade-up">
+                <h3><i class="fas fa-atom"></i> Who We Are</h3>
+                <p>We are the <strong>Inelectronics Student Club</strong>, a passionate group of students dedicated to exploring the world of robotics and engineering. We believe in innovation, collaboration, and pushing the boundaries of technology.</p>
+                <p class="club-quote"><em>"Experience develop share!"</em></p>
+                <div class="contact-details">
+                    <p><i class="fas fa-map-marker-alt"></i> Institute Of Electrical Engineering & Electronics - Boumerdes</p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:inelectronics.club@univ-boumerdes.dz">inelectronics.club@univ-boumerdes.dz</a></p>
+
+                </div>
+            </div>
+
+
+            <div class="contact-social anim-fade-up-delay">
+                <h3><i class="fas fa-share-alt"></i> Connect With Us</h3>
+                <p>Follow our journey and get competition updates:</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/InelectronicsStudentClub" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/inelectronics.student.club?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/company/inelectronics-student-club/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+
+            <div class="contact-map anim-fade-up-delay-more">
+                <h3><i class="fas fa-location-arrow"></i> Our Location</h3>
+                <div class="map-placeholder">
+                     <iframe
+                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3196.515918112807!2d3.4696710757775686!3d36.758188972259106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128e68edd6855003%3A0x4db0e7b46ceec8ce!2sInelectronics%20Student%20Club!5e0!3m2!1sen!2sdz!4v1743264622591!5m2!1sen!2sdz"
+                         width="100%"
+                         height="250"
+                         style="border:0;"
+                         allowfullscreen=""
+                         loading="lazy"
+                         referrerpolicy="no-referrer-when-downgrade"
+                         title="Club Location Map">
+                     </iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Footer Section -->
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-links">
+            <a href="#presentation">About</a>
+            <a href="#register">Rules</a>
+            <a href="#faq">FAQ</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-social">
+            <a href="https://www.facebook.com/InelectronicsStudentClub" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/inelectronics.student.club?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/company/inelectronics-student-club/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <p class="footer-copy">Copyright © <strong>Inelectronics student club</strong> 2025</p>
+    </div>
+
+</footer>
+
+
+<script src="script.js"></script>
+=<script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.82/build/spline-viewer.js"></script>
+
+
+
+</body>
+</html>
